@@ -15,8 +15,8 @@
 #ifdef USE_FASTLED
   #define LED_TYPE WS2812
   #define COLOR_ORDER RGB  // strip is GRB, NeoPixelBus uses different order in memory
-  // Custom LED driver board uses GPIO D0, D1, D2, and D4 to drive LED strips 
-  #define PIN_SEG_0    5  // D0 on ESP8266 NodeMCU - Compatible with FastLED driver
+  // Custom LED driver board uses GPIO D1, D2, D4, and D5 to drive LED strips 
+  #define PIN_SEG_0    5  // D5 on ESP8266 NodeMCU - Compatible with FastLED driver
   #define PIN_SEG_1    1  // D1 on ESP8266 NodeMCU - Compatible with FastLED driver
   #define PIN_UNUSED_2 2  // D2 on ESP8266 NodeMCU - Compatible with FastLED driver
   #define PIN_UNUSED_4 4  // D4 on ESP8266 NodeMCU - Compatible with WLED driver
