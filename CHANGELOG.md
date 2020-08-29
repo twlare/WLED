@@ -2,7 +2,36 @@
 
 ### Development versions after 0.10.0 release
 
-#### Build 2007020
+#### Build 2008250
+
+-   Made `platformio_override.ini` example easier to use by including the `default_envs` property
+-   FastLED uses `now` as timer, so effects using e.g. `beatsin88()` will sync correctly
+-   Extended the speed range of Pacifica effect
+-   Fixed exception on empty MQTT payload (#1101)
+
+#### Build 2008200
+
+-   Added segment mirroring to web UI
+-   Fixed segment mirroring when in reverse mode
+
+#### Build 2008140
+
+-   Removed verbose live mode info from `<ds>` in HTTP API response
+
+#### Build 2008100
+
+-   Fixed Auto White mode setting (fixes #1088)
+
+#### Build 2008070
+
+-   Added segment mirroring (`mi` property) (#1017)
+-   Fixed DMX settings page not displayed (#1070)
+-   Fixed ArtNet multi universe and improve code style (#1076)
+-   Renamed global var `local` to `localTime` (#1078)
+
+#### Build 2007190
+
+-   Fixed hostname containing illegal characters (#1035)
 
 #### Build 2006251
 

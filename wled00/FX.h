@@ -32,6 +32,7 @@
 
 #define USE_FASTLED  // Use FastLED library to output pixel data
 #define FASTLED_INTERNAL //remove annoying pragma messages
+#define USE_GET_MILLISECOND_TIMER
 #include "FastLED.h"
 
 #define DEFAULT_BRIGHTNESS (uint8_t)127
@@ -268,10 +269,9 @@ class WS2812FX {
       uint16_t virtualLength()
       {
         uint16_t groupLen = groupLength();
-        uint16_t vLength;
-        vLength = (length() + groupLen - 1) / groupLen;
+        uint16_t vLength = (length() + groupLen - 1) / groupLen;
         if (options & MIRROR)
-          vLength /= 2;  // divide by 2 if mirror; leaves a blank LED in the middle if length is odd
+          vLength = (vLength + 1) /2;  // divide by 2 if mirror, leave at least a single LED
         return vLength;
       }
     } segment;
@@ -452,7 +452,7 @@ class WS2812FX {
       setRgbwPwm(void);
 
     bool
-      reverseMode = false,
+      reverseMode = false,      //is the entire LED strip reversed?
       gammaCorrectBri = false,
       gammaCorrectCol = true,
       applyToAllSelected = true,
@@ -483,6 +483,7 @@ class WS2812FX {
       triwave16(uint16_t);
 
     uint32_t
+      now,
       timebase,
       color_wheel(uint8_t),
       color_from_palette(uint16_t, bool mapping, bool wrap, uint8_t mcol, uint8_t pbri = 255),
@@ -625,7 +626,6 @@ class WS2812FX {
     CRGBPalette16 currentPalette;
     CRGBPalette16 targetPalette;
 
-    uint32_t now;
     uint16_t _length, _lengthRaw, _virtualSegmentLength;
     uint16_t _rand16seed;
     uint8_t _brightness;
@@ -688,7 +688,6 @@ class WS2812FX {
 
     uint16_t realPixelIndex(uint16_t i);
 };
-
 
 //10 names per line
 const char JSON_mode_names[] PROGMEM = R"=====([
