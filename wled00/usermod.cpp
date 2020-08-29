@@ -15,8 +15,11 @@
 #ifdef USE_FASTLED
   #define LED_TYPE WS2812
   #define COLOR_ORDER RGB  // strip is GRB, NeoPixelBus uses different order in memory
-  #define PIN_SEG_0 5  // 4 = D4 on ESP8266 NodeMCU - Compatible with WLED
-  #define PIN_SEG_1 1  // D1 on ESP8266 NodeMCU
+  // Custom LED driver board uses GPIO D0, D1, D2, and D4 to drive LED strips 
+  #define PIN_SEG_0    5  // D0 on ESP8266 NodeMCU - Compatible with FastLED driver
+  #define PIN_SEG_1    1  // D1 on ESP8266 NodeMCU - Compatible with FastLED driver
+  #define PIN_UNUSED_2 2  // D2 on ESP8266 NodeMCU - Compatible with FastLED driver
+  #define PIN_UNUSED_4 4  // D4 on ESP8266 NodeMCU - Compatible with WLED driver
 
   extern CRGB* leds;// = (CRGB*)bus->GetPixels();  // Pointer to NeoPixelBus led array
 #endif
@@ -231,6 +234,10 @@ void userSetup()
   FastLED.addLeds<LED_TYPE,PIN_SEG_0,COLOR_ORDER>(leds, segments[0].startLED, segments[0].numLEDs);
 #if NUM_SEGMENTS > 1
   FastLED.addLeds<LED_TYPE,PIN_SEG_1,COLOR_ORDER>(leds, segments[1].startLED, segments[1].numLEDs);
+  pinMode(PIN_UNUSED_2, OUTPUT);    // set pin to output mode
+  digitalWrite(PIN_UNUSED_2, LOW);  // unused output pins should be set low
+  pinMode(PIN_UNUSED_4, OUTPUT);    // set pin to output mode
+  digitalWrite(PIN_UNUSED_4, LOW);  // unused output pins should be set low
 #endif
   FastLED.setCorrection(UncorrectedColor);//TypicalLEDStrip);
   FastLED.setDither(DISABLE_DITHER);
