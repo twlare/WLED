@@ -30,7 +30,7 @@
 #include "NpbWrapper.h"
 #include "const.h"
 
-#define USE_FASTLED  // Use FastLED library to output pixel data
+//#define USE_FASTLED  // Use FastLED library to output pixel data
 #define FASTLED_INTERNAL //remove annoying pragma messages
 #define USE_GET_MILLISECOND_TIMER
 #include "FastLED.h"
