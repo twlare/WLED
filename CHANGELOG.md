@@ -1,12 +1,33 @@
 ## WLED changelog
 
-### Development versions after 0.10.0 release
+### WLED version 0.10.2
+
+#### Build 2008310
+
+-   Added new logo
+-   Maximum GZIP compression (#1126)
+-   Enable WebSockets by default
+
+### Development versions between 0.10.0 and 0.10.2 releases
+
+#### Build 2008300
+
+-   Added new UI customization options to UI settings
+-   Added Dancing Shadows effect (#1108)
+-   Preset cycle is now paused if lights turned off or nightlight active
+-   Removed `esp01` and `esp01_ota` envs from travis build (need too much flash)
+
+#### Build 2008290
+
+-   Added individual LED control support to JSON API
+-   Added internal Segment Freeze/Pause option
 
 #### Build 2008250
 
 -   Made `platformio_override.ini` example easier to use by including the `default_envs` property
 -   FastLED uses `now` as timer, so effects using e.g. `beatsin88()` will sync correctly
 -   Extended the speed range of Pacifica effect
+-   Improved TPM2.net receiving (#1100)
 -   Fixed exception on empty MQTT payload (#1101)
 
 #### Build 2008200
