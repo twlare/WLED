@@ -32,9 +32,10 @@
 #else
   #define NUM_LEDS_SEG_0 419//420  // really 419, but use 420 for balanced mirror effects
   #define NUM_LEDS_SEG_1 298
-  #define NUM_SEGMENTS 2
+  #define NUM_SEGMENTS 12//2
 #endif
-#define NUM_LEDS (NUM_LEDS_SEG_0 + NUM_LEDS_SEG_1)
+//#define NUM_LEDS (NUM_LEDS_SEG_0 + NUM_LEDS_SEG_1)
+#define NUM_LEDS 180
 #define ARRAY_SIZE(A) (sizeof(A) / sizeof((A)[0]))
 
 enum palette_t {
@@ -126,10 +127,10 @@ const Effect playList[][NUM_SEGMENTS] = {//RedWhiteBlueplayList[][NUM_SEGMENTS] 
     { { FX_MODE_COLORTWINKLE,       P_RedWhiteBlue, 128, 128, false, false, {RED, WHITE, BLUE}, 30 },
       { FX_MODE_COLORTWINKLE,       P_RedWhiteBlue, 128, 128, false, false, {RED, WHITE, BLUE}, 30 } },
 
-    { { FX_MODE_COLORWAVES,         P_RedWhiteBlue,  32, 255, false, false, {RED, WHITE, BLUE}, 30 },
-      { FX_MODE_COLORWAVES,         P_RedWhiteBlue,  32, 255, false, false, {RED, WHITE, BLUE}, 30 } },
-    { { FX_MODE_COLORWAVES,         P_RedWhiteBlue,  32, 255, false, false, {RED, WHITE, BLUE}, 30 },
-      { FX_MODE_COLORWAVES,         P_RedWhiteBlue,  32, 255, false,  true, {RED, WHITE, BLUE}, 30 } },  // mirror
+    { { FX_MODE_COLORWAVES,         P_RedWhiteBlue,  32, 255, false, false, {RED, WHITE, BLUE}, 15 },
+      { FX_MODE_COLORWAVES,         P_RedWhiteBlue,  32, 255, false, false, {RED, WHITE, BLUE}, 15 } },
+    { { FX_MODE_COLORWAVES,         P_RedWhiteBlue,  32, 255, false, false, {RED, WHITE, BLUE}, 15 },
+      { FX_MODE_COLORWAVES,         P_RedWhiteBlue,  32, 255, false,  true, {RED, WHITE, BLUE}, 15 } },  // mirror
 
     { { FX_MODE_DYNAMIC,            P_RedWhiteBlue, 192, 128, false, false, {RED, WHITE, BLUE}, 30 },
       { FX_MODE_DYNAMIC,            P_RedWhiteBlue, 192, 128, false, false, {RED, WHITE, BLUE}, 30 } },
@@ -140,10 +141,10 @@ const Effect playList[][NUM_SEGMENTS] = {//RedWhiteBlueplayList[][NUM_SEGMENTS] 
     { { FX_MODE_FILLNOISE8,         P_RedWhiteBlue,   0, 128, false, false, {RED, WHITE, BLUE}, 30 },
       { FX_MODE_FILLNOISE8,         P_RedWhiteBlue,   0, 128, false, false, {RED, WHITE, BLUE}, 30 } },
 
-    { { FX_MODE_NOISE16_2,          P_RedWhiteBlue,  64, 128, false, false, {RED, WHITE, BLUE}, 30 },
-      { FX_MODE_NOISE16_2,          P_RedWhiteBlue,  64, 128, false, false, {RED, WHITE, BLUE}, 30 } },
-    { { FX_MODE_NOISE16_2,          P_RedWhiteBlue,  64, 128, false, false, {RED, WHITE, BLUE}, 30 },
-      { FX_MODE_NOISE16_2,          P_RedWhiteBlue,  64, 128, false,  true, {RED, WHITE, BLUE}, 30 } },  // mirror
+    { { FX_MODE_NOISE16_2,          P_RedWhiteBlue,  64, 128, false, false, {RED, WHITE, BLUE}, 15 },
+      { FX_MODE_NOISE16_2,          P_RedWhiteBlue,  64, 128, false, false, {RED, WHITE, BLUE}, 15 } },
+    { { FX_MODE_NOISE16_2,          P_RedWhiteBlue,  64, 128, false, false, {RED, WHITE, BLUE}, 15 },
+      { FX_MODE_NOISE16_2,          P_RedWhiteBlue,  64, 128, false,  true, {RED, WHITE, BLUE}, 15 } },  // mirror
 
     { { FX_MODE_NOISE16_3,          P_RedWhiteBlue,  64, 128, false, false, {RED, WHITE, BLUE}, 30 },
       { FX_MODE_NOISE16_3,          P_RedWhiteBlue,  64, 128, false, false, {RED, WHITE, BLUE}, 30 } },
@@ -157,10 +158,10 @@ const Effect playList[][NUM_SEGMENTS] = {//RedWhiteBlueplayList[][NUM_SEGMENTS] 
     { { FX_MODE_PALETTE,            P_RedWhiteBlue,  96, 128, false, false, {RED, WHITE, BLUE}, 30 },
       { FX_MODE_PALETTE,            P_RedWhiteBlue,  96, 128, false, false, {RED, WHITE, BLUE}, 30 } },  // ? mirror
 
-    { { FX_MODE_RAINBOW_CYCLE,      P_RedWhiteBlue,  64, 128, false, false, {RED, WHITE, BLUE}, 30 },
-      { FX_MODE_RAINBOW_CYCLE,      P_RedWhiteBlue,  64, 128, false, false, {RED, WHITE, BLUE}, 30 } },
-    { { FX_MODE_RAINBOW_CYCLE,      P_RedWhiteBlue,  64, 128, false, false, {RED, WHITE, BLUE}, 30 },
-      { FX_MODE_RAINBOW_CYCLE,      P_RedWhiteBlue,  64, 128, false,  true, {RED, WHITE, BLUE}, 30 } },  // mirror
+    { { FX_MODE_RAINBOW_CYCLE,      P_RedWhiteBlue,  64, 128, false, false, {RED, WHITE, BLUE}, 15 },
+      { FX_MODE_RAINBOW_CYCLE,      P_RedWhiteBlue,  64, 128, false, false, {RED, WHITE, BLUE}, 15 } },
+    { { FX_MODE_RAINBOW_CYCLE,      P_RedWhiteBlue,  64, 128, false, false, {RED, WHITE, BLUE}, 15 },
+      { FX_MODE_RAINBOW_CYCLE,      P_RedWhiteBlue,  64, 128, false,  true, {RED, WHITE, BLUE}, 15 } },  // mirror
 
     { { FX_MODE_TRICOLOR_CHASE,     P_RedWhiteBlue, 192, 128, false, false, {RED, WHITE, BLUE}, 30 },
       { FX_MODE_TRICOLOR_CHASE,     P_RedWhiteBlue, 192, 128, false, false, {RED, WHITE, BLUE}, 30 } },  // ? mirror
@@ -204,14 +205,48 @@ const Effect playList[][NUM_SEGMENTS] = {
 
 Segment segments[NUM_SEGMENTS];
 //Effect [][NUM_SEGMENTS] playList;
+uint16_t myNumSegments;
+
+// Initialize playlist segment configuration
+void initSpinnerSegments() {
+  myNumSegments = NUM_SEGMENTS;
+  for (uint16_t s = 0; s < NUM_SEGMENTS; s++) {
+    segments[s].startLED = s * 15;
+    segments[s].numLEDs = 15;
+    segments[s].segmentNum = s;
+  }
+
+  for (byte s = 0; s < NUM_SEGMENTS; s++)
+    strip.setSegment(s, segments[s].startLED, segments[s].startLED + segments[s].numLEDs);
+}
+
+// Initialize star segment configuration
+void initStarSegments() {
+  myNumSegments = 3;
+  segments[0].startLED = 0;
+  segments[0].numLEDs = 180;
+  segments[0].segmentNum = 0;
+  segments[1].startLED = 180;
+  segments[1].numLEDs = 108;
+  segments[1].segmentNum = 1;
+  segments[2].startLED = 288;
+  segments[2].numLEDs = 48;
+  segments[2].segmentNum = 2;
+ 
+  for (byte s = 0; s < myNumSegments; s++)
+    strip.setSegment(s, segments[s].startLED, segments[s].startLED + segments[s].numLEDs);
+  for (byte s = myNumSegments; s < NUM_SEGMENTS; s++)
+    strip.setSegment(s, 0, 0);  // clear unused segments
+}
 
 //gets called once at boot. Do all initialization that doesn't depend on network here
 void userSetup()
 {
-  // Force playlist to run on reboot
+// Force playlist to run on reboot
 // should read from EEPROM
-//  userVar0 = 1;
+  userVar0 = 0;//1;
 
+#if false
   // Initialize playlist segment configuration
   segments[0].startLED = 0;
   segments[0].numLEDs = NUM_LEDS_SEG_0;
@@ -221,14 +256,14 @@ void userSetup()
   segments[1].numLEDs = NUM_LEDS_SEG_1;
   segments[1].segmentNum = 1;
 #endif
+#endif
 
   if (ledCount < NUM_LEDS) {
     ledCount = NUM_LEDS;
     strip.init(useRGBW, ledCount, skipFirstLed);
   }
 
-  for (byte s = 0; s < NUM_SEGMENTS; s++)
-    strip.setSegment(s, segments[s].startLED, segments[s].startLED + segments[s].numLEDs);
+//  initSpinnerSegments();
 
 #ifdef USE_FASTLED
   FastLED.addLeds<LED_TYPE,PIN_SEG_0,COLOR_ORDER>(leds, segments[0].startLED, segments[0].numLEDs);
@@ -272,70 +307,46 @@ void userLoop()
   DEBUG_PRINT(" >>>---playlist update--->>> ");
   DEBUG_PRINTLN(playListIndex);
 
-  for (byte s = 0; s < NUM_SEGMENTS; s++) {
+  if (playList[playListIndex][0].mode == FX_MODE_STATIC_PATTERN)
+    initStarSegments();
+  else
+    initSpinnerSegments();
+
+  for (byte s = 0; s < myNumSegments; s++) {  // variable number of segments - spinner vs stars
     WS2812FX::Segment& seg = strip.getSegment(s);
-    seg.setOption(SEG_OPTION_ON, true);
-    seg.setOption(SEG_OPTION_SELECTED, true);
-    seg.setOption(SEG_OPTION_REVERSED, playList[playListIndex][s].reverse);
-    seg.setOption(SEG_OPTION_MIRROR, playList[playListIndex][s].mirror);
-    if (s == strip.getMainSegmentId()) {  // special case for main segment (usually 0)
-      effectCurrent =   playList[playListIndex][s].mode;
-      effectPalette =   playList[playListIndex][s].palette;
-      effectSpeed =     playList[playListIndex][s].speed;
-      effectIntensity = playList[playListIndex][s].intensity;
-      col[0]          = playList[playListIndex][s].colors[0] >> 16 & 0xff;
-      col[1]          = playList[playListIndex][s].colors[0] >> 8  & 0xff;
-      col[2]          = playList[playListIndex][s].colors[0]       & 0xff;
-      colSec[0]       = playList[playListIndex][s].colors[1] >> 16 & 0xff;
-      colSec[1]       = playList[playListIndex][s].colors[1] >>  8 & 0xff;
-      colSec[2]       = playList[playListIndex][s].colors[1]       & 0xff;
-      strip.setColor(2, playList[playListIndex][s].colors[2]);
-    } else {
-      seg.mode =      playList[playListIndex][s].mode;
-// ???      strip.setMode(s, 0);  // force runtime reset
-      strip.setMode(s, seg.mode);
-      seg.palette =   playList[playListIndex][s].palette;
-      seg.speed =     playList[playListIndex][s].speed;
-      seg.intensity = playList[playListIndex][s].intensity;
-      for (byte c = 0; c < NUM_COLORS; c++)
-        seg.colors[c] = playList[playListIndex][s].colors[c];
+    if (playList[playListIndex][0].mode == FX_MODE_STATIC_PATTERN && s == 0) {
+      seg.setOption(SEG_OPTION_ON, false);  // force segment 0 off
     }
+    else
+      seg.setOption(SEG_OPTION_ON, true);
+    seg.setOption(SEG_OPTION_SELECTED, true);
+    seg.setOption(SEG_OPTION_REVERSED, playList[playListIndex][0].reverse);
+    seg.setOption(SEG_OPTION_MIRROR, playList[playListIndex][0].mirror);
+    if (s == strip.getMainSegmentId()) {  // special case for main segment (usually 0)
+      effectCurrent =   playList[playListIndex][0].mode;
+      effectPalette =   playList[playListIndex][0].palette;
+      effectSpeed =     playList[playListIndex][0].speed;
+      effectIntensity = playList[playListIndex][0].intensity;
+      col[0]          = playList[playListIndex][0].colors[0] >> 16 & 0xff;
+      col[1]          = playList[playListIndex][0].colors[0] >> 8  & 0xff;
+      col[2]          = playList[playListIndex][0].colors[0]       & 0xff;
+      colSec[0]       = playList[playListIndex][0].colors[1] >> 16 & 0xff;
+      colSec[1]       = playList[playListIndex][0].colors[1] >>  8 & 0xff;
+      colSec[2]       = playList[playListIndex][0].colors[1]       & 0xff;
+      strip.setColor(2, playList[playListIndex][0].colors[2]);
+    }
+
+    if (playList[playListIndex][0].mode == FX_MODE_STATIC_PATTERN)
+        seg.mode =      FX_MODE_PALETTE;
+      else
+        seg.mode =      playList[playListIndex][0].mode;
+      strip.setMode(s, seg.mode);
+      seg.palette =   playList[playListIndex][0].palette;
+      seg.speed =     playList[playListIndex][0].speed;
+      seg.intensity = playList[playListIndex][0].intensity;
+      for (byte c = 0; c < NUM_COLORS; c++)
+        seg.colors[c] = playList[playListIndex][0].colors[c];
   }
   colorUpdated(NOTIFIER_CALL_MODE_DIRECT_CHANGE);
   endTime = now + (uint32_t)1000 * playList[playListIndex][0].time;
 }
-
-/*
-led.cpp
-	Line 44:     strip.setBrightness(val);
-	Line 51:   strip.setColor(0, colT[0], colT[1], colT[2], colT[3]);
-	Line 52:   strip.setColor(1, colSecT[0], colSecT[1], colSecT[2], colSecT[3]);
-	Line 92:   bool fxChanged = strip.setEffectConfig(effectCurrent, effectSpeed, effectIntensity, effectPalette);
-	Line 154:     strip.setTransitionMode(true);
-	Line 195:       strip.setTransitionMode(false);
-
-    effectCurrent = EEPROM.read(i+10);
-    effectSpeed = EEPROM.read(i+11);
-    effectIntensity = EEPROM.read(i+16);
-    effectPalette = EEPROM.read(i+17);
-
- json.cpp
-    WS2812FX::Segment& seg = strip.getSegment(id);
-    seg.setOption(SEG_OPTION_ON, elem["on"] | seg.getOption(SEG_OPTION_ON));
-    seg.setOption(SEG_OPTION_SELECTED, elem["sel"] | seg.getOption(SEG_OPTION_SELECTED));
-    seg.setOption(SEG_OPTION_REVERSED, elem["rev"] | seg.getOption(SEG_OPTION_REVERSED));
-      if (fx != seg.mode && fx < strip.getModeCount())
-        strip.setMode(id, fx);
-      seg.speed = elem["sx"] | seg.speed;
-      seg.intensity = elem["ix"] | seg.intensity;
-      seg.palette = elem["pal"] | seg.palette;
-  colorUpdated(noNotification ? NOTIFIER_CALL_MODE_NO_NOTIFY : NOTIFIER_CALL_MODE_DIRECT_CHANGE);
-
-//  WS2812FX::Segment& seg = strip.getSegment(0);
-  uint16_t grp = strip.getSegment(0).grouping;//seg.grouping;
-  uint16_t spc = strip.getSegment(0).spacing;//seg.spacing;
-//  strip.setSegment(id, start, stop, grp, spc);
-  strip.setSegment(0, 0, 100, grp, spc);
-  strip.setSegment(1, 100, 150, grp, spc);
-
-*/
